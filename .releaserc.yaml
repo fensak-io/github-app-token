@@ -1,0 +1,20 @@
+branches: ["main"]
+plugins:
+  - - "@semantic-release/commit-analyzer"
+    - preset: angular
+      releaseRules:
+        - type: chore
+          release: patch
+        # Override default rules for pre-1.0
+        - breaking: true
+          release: minor
+        - type: feat
+          release: patch
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+  - "@semantic-release/release-notes-generator"
+  - - "@semantic-release/exec"
+    - publishCmd: |
+        echo "${nextRelease.notes}" > /tmp/release-notes.md
