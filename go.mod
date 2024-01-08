@@ -3,7 +3,7 @@ module github.com/fensak-io/github-app-token
 go 1.20
 
 require (
-	github.com/go-resty/resty/v2 v2.10.0
+	github.com/go-resty/resty/v2 v2.11.0
 	github.com/golang-jwt/jwt/v5 v5.1.0
 	github.com/urfave/cli/v2 v2.25.7
 )
